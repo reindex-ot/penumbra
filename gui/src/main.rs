@@ -293,9 +293,7 @@ fn primary_lang(langid: u16) -> u16 {
 unsafe fn detect_locale() -> Locale {
     unsafe {
         match primary_lang(GetUserDefaultUILanguage()) {
-            0x04 => Locale::Chinese,
             0x11 => Locale::Japanese,
-            0x12 => Locale::Korean,
             _ => Locale::English,
         }
     }
@@ -304,8 +302,6 @@ unsafe fn detect_locale() -> Locale {
 fn font_for(locale: Locale) -> &'static str {
     match locale {
         Locale::Japanese => "Yu Gothic UI",
-        Locale::Chinese => "Microsoft YaHei UI",
-        Locale::Korean => "Malgun Gothic",
         Locale::English => "Segoe UI",
     }
 }
