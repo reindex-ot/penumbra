@@ -1506,6 +1506,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "penumbra-flash-gui"
+version = "1.1.0"
+dependencies = [
+ "winresource",
+]
+
+[[package]]
 name = "pest"
 version = "2.8.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
