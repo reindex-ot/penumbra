@@ -5,15 +5,11 @@ use std::sync::OnceLock;
 pub enum Locale {
     English,
     Japanese,
-    Chinese,
-    Korean,
 }
 
 struct LocaleStore {
     english: HashMap<&'static str, &'static str>,
     japanese: HashMap<&'static str, &'static str>,
-    chinese: HashMap<&'static str, &'static str>,
-    korean: HashMap<&'static str, &'static str>,
 }
 
 static STORE: OnceLock<LocaleStore> = OnceLock::new();
@@ -22,15 +18,11 @@ pub fn tr(locale: Locale, key: &str) -> &'static str {
     let store = STORE.get_or_init(|| LocaleStore {
         english: parse(include_str!("../locales/en-US.lang")),
         japanese: parse(include_str!("../locales/ja-JP.lang")),
-        chinese: parse(include_str!("../locales/zh-CN.lang")),
-        korean: parse(include_str!("../locales/ko-KR.lang")),
     });
 
     let localized = match locale {
         Locale::English => store.english.get(key),
         Locale::Japanese => store.japanese.get(key),
-        Locale::Chinese => store.chinese.get(key),
-        Locale::Korean => store.korean.get(key),
     };
 
     localized
