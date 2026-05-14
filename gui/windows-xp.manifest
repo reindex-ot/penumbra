@@ -5,7 +5,7 @@
     processorArchitecture="*"
     name="Penumbra.FlashTool.GUI"
     type="win32" />
-  <description>Penumbra Flash Tool GUI</description>
+  <description>Penumbra GUI</description>
   <dependency>
     <dependentAssembly>
       <assemblyIdentity
