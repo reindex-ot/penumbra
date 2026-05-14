@@ -1,12 +1,12 @@
 [package]
-name = "penumbra-flash-gui"
+name = "penumbra-gui"
 version = "1.1.0"
 edition.workspace = true
-authors = ["Shomy", "Codex"]
+authors = ["Shomy", "Codex", "Re*Index.(ot_inc)"]
 license.workspace = true
 homepage.workspace = true
 repository.workspace = true
-description = "Native Windows Flash Tool GUI for Antumbra/Penumbra."
+description = "Penumbra GUI"
 
 [[bin]]
 name = "penumbra-flash-gui"
